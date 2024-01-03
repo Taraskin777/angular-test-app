@@ -1,34 +1,47 @@
-h1{
-   text-align: center;
+h1 {
+  text-align: center;
 }
 
-section{
-   display: flex;
-   justify-content: center;
+section {
+  display: flex;
+  justify-content: center;
 }
 
-.wrapper{
-   display: flex;
-   flex-direction: column;
-   width: 30vh;
-   text-align: center;
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 30vh;
+  text-align: center;
 }
 
-input{
-   border: 1px solid grey;
-   border-radius: 5px;
-   height: 1.7rem;
-   padding-left: 10px;
+input {
+  border: 1px solid grey;
+  border-radius: 5px;
+  height: 1.7rem;
+  padding-left: 10px;
 }
 
- input:focus{
-   outline: 1px solid red;
-   border: none;
- }
+input:focus {
+  outline: 1px solid red;
+  border: none;
+}
 
- .strength {
-   width: 30vh;
-   border: 1px solid grey;
-   border-radius: 5px;
-   margin-bottom: 10px;
- }
+.strength {
+  width: 30vh;
+  border: 1px solid grey;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.gray {
+  background-color: gray;
+}
+.red {
+  background-color: red;
+}
+.yellow {
+  background-color: yellow;
+}
+.green {
+  background-color: green;
+}
