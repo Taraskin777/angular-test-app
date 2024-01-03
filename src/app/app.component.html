@@ -7,51 +7,42 @@
       <input
         type="password"
         placeholder="Password"
-        (input)="onInputChange($event)"
+        (keyup)="onInputChange($event)"
       />
       <p>Password strength: {{ passwordStrength }}</p>
+
       <div
-        class="strength"
-        [ngClass]="{
-          red: passwordStrength === 'Easy' || passwordStrength === 'Weak',
-          gray:
-            passwordStrength !== 'Easy' &&
-            passwordStrength !== 'Medium' &&
-            passwordStrength !== 'Strong',
-          green: passwordStrength === 'Strong',
-          yellow:
-            passwordStrength !== 'Easy' &&
-            passwordStrength !== 'Strong' &&
-            passwordStrength !== 'Weak'
-        }"
-      >
-        <p>Easy</p>
-      </div>
-      <div
-        class="strength"
-        [ngClass]="{
-          red: passwordStrength === 'Weak',
-          yellow: passwordStrength === 'Medium',
-          gray: passwordStrength !== 'Medium' && passwordStrength !== 'Strong',
-          green: passwordStrength === 'Strong'
-        }"
-      >
-        <p>Medium</p>
-      </div>
-      <div
-        class="strength"
-        [ngClass]="{
-          red: passwordStrength === 'Weak',
-          gray:
-            passwordStrength !== 'Easy' &&
-            passwordStrength !== 'Medium' &&
-            passwordStrength !== 'Strong' &&
-            passwordStrength !== 'Weak',
-          green: passwordStrength === 'Strong'
-        }"
-      >
-        <p>Strong</p>
-      </div>
+      class="strength"
+      [ngClass]="{
+        red: (passwordStrength === 'Weak' || passwordStrength === 'Easy') && password.length > 0,
+        gray: (passwordStrength !== 'Medium' && passwordStrength !== 'Strong' && passwordStrength !== 'Weak') || password.length === 0,
+        green: passwordStrength === 'Strong'
+      }"
+    >
+      <p>Easy</p>
+    </div>
+    <div
+      class="strength"
+      [ngClass]="{
+        red: passwordStrength === 'Weak',
+        yellow: passwordStrength === 'Medium' && password.length > 0,
+        gray: (passwordStrength !== 'Medium' && passwordStrength !== 'Strong') || password.length === 0,
+        green: passwordStrength === 'Strong'
+      }"
+    >
+      <p>Medium</p>
+    </div>
+    <div
+      class="strength"
+      [ngClass]="{
+        red: passwordStrength === 'Weak',
+        gray: passwordStrength !== 'Medium' && passwordStrength !== 'Strong' && passwordStrength !== 'Weak',
+        green: passwordStrength === 'Strong'
+      }"
+    >
+      <p>Strong</p>
+    </div>
+
     </div>
   </section>
 </main>

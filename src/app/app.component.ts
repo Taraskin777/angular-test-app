@@ -34,13 +34,13 @@ export class AppComponent {
     } else if (onlyLetters || onlyNumbers || onlySymbols) {
       this.passwordStrength = 'Easy';
     } else if (
-      /^[a-zA-Z]+[0-9]+$/.test(this.password) ||
-      /^[a-zA-Z]+[^a-zA-Z0-9]+$/.test(this.password) ||
-      /^[0-9]+[^a-zA-Z0-9]+$/.test(this.password)
+      /[a-zA-Z]/.test(this.password) &&
+      /[0-9]/.test(this.password) &&
+      /[^a-zA-Z0-9]/.test(this.password)
     ) {
-      this.passwordStrength = 'Medium';
-    } else {
       this.passwordStrength = 'Strong';
+    } else {
+      this.passwordStrength = 'Medium';
     }
   }
 }
