@@ -28,6 +28,7 @@ input:focus {
 
 .strength {
   width: 30vh;
+  height: 30px;
   border: 1px solid grey;
   border-radius: 5px;
   margin-bottom: 10px;

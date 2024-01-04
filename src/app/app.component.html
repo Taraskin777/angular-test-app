@@ -25,9 +25,7 @@
           green: passwordStrength === 'Strong',
           yellow: passwordStrength === 'Medium' && password.length > 0
         }"
-      >
-        <p>Easy</p>
-      </div>
+      ></div>
       <div
         class="strength"
         [ngClass]="{
@@ -38,9 +36,7 @@
             password.length === 0,
           green: passwordStrength === 'Strong'
         }"
-      >
-        <p>Medium</p>
-      </div>
+      ></div>
       <div
         class="strength"
         [ngClass]="{
@@ -52,9 +48,7 @@
             (passwordStrength === 'Medium' && password.length > 0),
           green: passwordStrength === 'Strong'
         }"
-      >
-        <p>Strong</p>
-      </div>
+      ></div>
     </div>
   </section>
 </main>
