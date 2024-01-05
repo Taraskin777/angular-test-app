@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PasswordValidatorService } from '../password-validator.service';
+import { PasswordValidatorService } from '../services/password-validator.service';
 
 @Component({
   selector: 'app-password-strength',
