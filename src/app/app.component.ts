@@ -1,46 +1,14 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { PasswordStrengthComponent } from './password-strength/password-strength.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet],
+  imports: [CommonModule, PasswordStrengthComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'My Test App';
-  password: string = '';
-  passwordStrength: string = '';
-  ngOnInit(): void {
-    this.checkPasswordStrength();
-  }
-  onInputChange(event: Event): void {
-    const passwordValue = (event.target as HTMLInputElement).value;
-    this.password = passwordValue;
-    this.checkPasswordStrength();
-  }
-  checkPasswordStrength(): void {
-    const passwordLength = this.password.length;
-    const onlyLetters = /^[a-zA-Z]+$/.test(this.password);
-    const onlyNumbers = /^[0-9]+$/.test(this.password);
-    const onlySymbols = /^[^a-zA-Z0-9]+$/.test(this.password);
-
-    if (passwordLength === 0) {
-      this.passwordStrength = 'Empty';
-    } else if (passwordLength < 8) {
-      this.passwordStrength = 'Weak';
-    } else if (onlyLetters || onlyNumbers || onlySymbols) {
-      this.passwordStrength = 'Easy';
-    } else if (
-      /[a-zA-Z]/.test(this.password) &&
-      /[0-9]/.test(this.password) &&
-      /[^a-zA-Z0-9]/.test(this.password)
-    ) {
-      this.passwordStrength = 'Strong';
-    } else {
-      this.passwordStrength = 'Medium';
-    }
-  }
 }
